@@ -45,3 +45,14 @@ it('calculates 10% commission', () => {
     const expectedResult = 200
     expect(currentResult).toBe(expectedResult)
 })
+
+it('calculates 15% commission', () => {
+    const currentResult = calculateSalesCommission([{
+        id: 'PROD-789',
+        unitPrice: 2000,
+        quantitySold: 3 
+    }])
+
+    const expectedResult = 900
+    expect(currentResult).toBe(expectedResult)
+})
