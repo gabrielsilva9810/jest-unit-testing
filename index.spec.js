@@ -1,36 +1,36 @@
-const calculaComissaoDeVenda = require ('.')
+const calculateSalesCommission = require ('.')
 
-it('se a lista estiver vazia, a comissão é zero', () => {
-    const resultadoAtual = calculaComissaoDeVenda([])
-    const resultadoEsperado = 0
-    expect(resultadoAtual).toBe(resultadoEsperado)
+it('if the list is empty, the commission is zero', () => {
+    const currentResult = calculateSalesCommission([])
+    const expectedResult = 0
+    expect(currentResult).toBe(expectedResult)
 })
 
-it ('calcula comissão quando só tem um item na lista', () => {
-    const resultadoAtual = calculaComissaoDeVenda([{
+it ('calculates commission when there is only one item in the list', () => {
+    const currentResult = calculateSalesCommission([{
         id: 'PROD-123',
-        precoUnitario: 1000,
-        quantidadeVendida: 1
+        unitPrice: 1000,
+        quantitySold: 1
     }])
 
-    const resultadoEsperado = 50
-    expect(resultadoAtual).toBe(resultadoEsperado)
+    const expectedResult = 50
+    expect(currentResult).toBe(expectedResult)
 })
 
-it ('calcula comissão quando há mais de um item na lista', () => {
-    const resultadoAtual = calculaComissaoDeVenda([
+it ('calculates commission when there is more than one item in the list', () => {
+    const currentResult = calculateSalesCommission([
         {
             id: 'PROD-123',
-            precoUnitario: 1000,
-            quantidadeVendida: 1 
+            unitPrice: 1000,
+            quantitySold: 1 
         },
         {
             id: 'PROD-456',
-            precoUnitario: 100,
-            quantidadeVendida: 5 
+            unitPrice: 100,
+            quantitySold: 5 
         }
     ])
 
-    const resultadoEsperado = 75
-    expect(resultadoAtual).toBe(resultadoEsperado)
+    const expectedResult = 75
+    expect(currentResult).toBe(expectedResult)
 })
